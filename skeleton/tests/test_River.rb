@@ -5,7 +5,7 @@ class TestName < Test::Unit::TestCase
   def test_river()
 
     river_test = River.new()
-    assert_equal(river_test.enter(), 'house')
+    assert_equal(river_test.enter(), 'front_door')
 
   end
 

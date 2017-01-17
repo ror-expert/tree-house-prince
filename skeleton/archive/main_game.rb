@@ -27,7 +27,7 @@ class Meadow < Scene
     case userSelection
     when /1/, /tree/, /house/
       puts "You go to the tree house.\n"
-      return 'house'
+      return 'front_foor'
     when /2/, /river/
       puts "You go to the river."
       return 'river'
@@ -39,7 +39,7 @@ class Meadow < Scene
 
   def enter()
 
-    puts WordWrap.ww """\n\nAfter a long journey, you arrive at the edge a tranquil meadow.  A flock of sheep munch contentedly in a large pen, and birds twitter in the trees.  At end of the meadow is a river and in the centre of the meadow stands a vast tree that reaches into the sky.  Wrapped around the tree is a chaotic collection of lean-tos, each one built as if it were an afterthought of an afterthought, with a spiral staircase running up the trunk.
+    puts  """\n\nAfter a long journey, you arrive at the edge a tranquil meadow.  A flock of sheep munch contentedly in a large pen, and birds twitter in the trees.  At end of the meadow is a river and in the centre of the meadow stands a vast tree that reaches into the sky.  Wrapped around the tree is a chaotic collection of lean-tos, each one built as if it were an afterthought of an afterthought, with a spiral staircase running up the trunk.
 
     At the foot of the tree is a front door.
 
@@ -59,7 +59,7 @@ end
 class River < Scene
   def enter()
     puts "You visit the river and then go to the house."
-    return 'house'
+    return 'front_foor'
   end
 end
 
@@ -102,7 +102,7 @@ class Map
   @@scenes = {
     'introduction' => Introduction.new(),
     'meadow' => Meadow.new(),
-    'house' => House.new(),
+    'front_foor' => House.new(),
     'finished' => Finished.new(),
   }
 

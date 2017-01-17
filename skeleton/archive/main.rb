@@ -10,7 +10,7 @@ end
 class HouseScene < Scene
 
   def floorSelection(floorNumber)
-    puts WordWrap.ww """
+    puts  """
     You are at a spiral staircase.  There is a sign on the landing:
 
     0. Ground Floor: Entrance to the castle
@@ -118,7 +118,7 @@ class HouseScene < Scene
         end
       when /6/, /leave/, /exit/, /back/, /meadow/
         if currentFloor != 0
-          puts WordWrap.ww "You descend the stairs, walk out the door, and keep going until the you reach the edge of the meadow."
+          puts  "You descend the stairs, walk out the door, and keep going until the you reach the edge of the meadow."
           currentFloor == 0
           return 'meadow'
         elsif currentFloor == 0
@@ -135,7 +135,7 @@ class HouseScene < Scene
   end
 
   def stayOrLeave
-    puts WordWrap.ww """Do you wish to have a look around or go back out?
+    puts  """Do you wish to have a look around or go back out?
 
     Look around
     Go back out
@@ -150,7 +150,7 @@ class HouseScene < Scene
       case userSelection
       when /look/, /around/
         puts "You inspect a few items, but find nothing of interest."
-        puts WordWrap.ww """Do you wish to have a look around or go back out?
+        puts  """Do you wish to have a look around or go back out?
 
         1. Look around
         2. Go back out
@@ -162,7 +162,7 @@ class HouseScene < Scene
         stayInRoom = false
       else
         puts "I don't understand what you want."
-        puts WordWrap.ww """Do you wish to have a look around or go back out?
+        puts  """Do you wish to have a look around or go back out?
 
         1. Look around
         2. Go back out
@@ -212,7 +212,7 @@ class Meadow < Scene
 
 
 
-    `puts WordWrap.ww """\n\nAfter a long journey, you arrive at the edge a tranquil meadow.  A flock of sheep munch contentedly in a large pen, and birds twitter in the trees.  At end of the meadow is a river and in the centre of the meadow stands a vast tree that reaches into the sky.  Wrapped around the tree is a chaotic collection of lean-tos, each one built as if it were an afterthought of an afterthought, with a spiral staircase running up the trunk.
+    `puts  """\n\nAfter a long journey, you arrive at the edge a tranquil meadow.  A flock of sheep munch contentedly in a large pen, and birds twitter in the trees.  At end of the meadow is a river and in the centre of the meadow stands a vast tree that reaches into the sky.  Wrapped around the tree is a chaotic collection of lean-tos, each one built as if it were an afterthought of an afterthought, with a spiral staircase running up the trunk.
 
     At the foot of the tree is a front door.
 
@@ -241,7 +241,7 @@ end
 
 class RiverBank < Scene
   def enter()
-    puts WordWrap.ww """
+    puts  """
     You go to the river bank.  You feel rather thirsty and decide to have a drink.  As you take a few handfuls of fresh water, you realise that the river current is very strong.  It would be extremely dangerous to wade into the water.
 
     Your thirst quenched, you stand back up and look around.
@@ -278,7 +278,7 @@ class FrontDoor < Scene
   def enter()
     puts "You stand before the front door of the tree house castle."
     ## Create riddle
-    puts WordWrap.ww """
+    puts """
     You knock on the front door, but no-one answers.
 
     Suddenly, a spider scuttles down on to the door handle.
@@ -355,7 +355,7 @@ end
 
 class MachineRoom < HouseScene
   def enter()
-    puts WordWrap.ww """
+    puts  """
     You enter a room full of machines, but you don't understand what they do."""
     stayOrLeave()
     floorSelection(1)
@@ -364,7 +364,7 @@ end
 
 class Kitchen < HouseScene
   def enter()
-    puts WordWrap.ww "You enter the kitchen and interact with a robot who makes you a sandwich."
+    puts  "You enter the kitchen and interact with a robot who makes you a sandwich."
     stayOrLeave()
     floorSelection(2)
   end
@@ -372,7 +372,7 @@ end
 
 class Library < HouseScene
   def enter()
-    puts WordWrap.ww "You enter the library and have a conversation with talking books, who tell you everything about themselves."
+    puts  "You enter the library and have a conversation with talking books, who tell you everything about themselves."
     stayOrLeave()
     floorSelection(3)
   end
@@ -409,7 +409,7 @@ end
 
 class Study < HouseScene
   def enter()
-    puts WordWrap.ww """You stand before a large oak door, which is locked.  You knock on the door, but no-one answers.  If anyone is in there, he is probably lost on contemplation of his lonely life as a king with a castle-in-the-making, but no queen to share it with.  There's not much you can do here."""
+    puts  """You stand before a large oak door, which is locked.  You knock on the door, but no-one answers.  If anyone is in there, he is probably lost on contemplation of his lonely life as a king with a castle-in-the-making, but no queen to share it with.  There's not much you can do here."""
     stayOrLeave()
     floorSelection(5)
   end

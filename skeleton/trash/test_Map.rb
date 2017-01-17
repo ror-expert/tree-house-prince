@@ -13,10 +13,6 @@ class TestCase < Test::Unit::TestCase
     test_map = Map.new()
     test_initialize = test_map('introduction')
     assert_equal(test_initialize(@start_scene), 'finished')
-
-
-
-
   end
 
 end

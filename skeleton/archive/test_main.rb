@@ -12,7 +12,7 @@
 #
 #     assert_equal(test_introduction.enter(), 'meadow')
 #
-#     assert_equal(test_meadow.enter(), 'house')
+#     assert_equal(test_meadow.enter(), 'front_foor')
 #
 #     assert_equal(test_house.enter(), 'finished')
 #

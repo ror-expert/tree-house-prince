@@ -19,3 +19,7 @@ class Engine
     current_scene.enter()
   end
 end
+
+a_map = Map.new('introduction')
+a_game = Engine.new(a_map)
+a_game.play()

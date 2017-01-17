@@ -6,7 +6,7 @@ class Meadow < Scene
     case userSelection
     when /1/, /tree/, /house/
       puts "You go to the tree house.\n"
-      return 'house'
+      return 'front_door'
     when /2/, /river/
       puts "You go to the river."
       return 'river'

@@ -15,7 +15,7 @@ class TestName < Test::Unit::TestCase
 
     meadow_test = Meadow.new()
     userSelection = "house"
-    assert_equal(meadow_test.fork_in_the_road(userSelection), "house")
+    assert_equal(meadow_test.fork_in_the_road(userSelection), "front_door")
 
   end
 
