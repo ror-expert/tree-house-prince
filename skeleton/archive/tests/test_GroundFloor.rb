@@ -7,7 +7,7 @@ class TestName < Test::Unit::TestCase
 
     ground_floor_test = GroundFloor.new()
     user_selection = "stairs"
-    assert_equal(ground_floor_test.choice(user_selection), 'spiral_staircase')
+    assert_equal(ground_floor_test.choice(user_selection), 'spiral_staircase_0')
 
   end
 

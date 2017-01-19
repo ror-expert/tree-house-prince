@@ -6,7 +6,7 @@ class FrontDoor < Scene
     puts "\n\nThat is correct!"
     puts "The door opens and the spider scuttles back into the doorframe."
     puts "You walk through.\n\n"
-    return 'spiral_staircase'
+    return 'ground_floor'
   end
 
   def incorrect_answer()

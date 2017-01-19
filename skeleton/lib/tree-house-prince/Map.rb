@@ -1,9 +1,17 @@
-require_relative "Scene.rb"
-require_relative "Introduction.rb"
-require_relative "Meadow.rb"
-require_relative "River.rb"
-require_relative "House.rb"
-require_relative "Finished.rb"
+# Saves me having to remember to require newly created scenes
+map_files = Dir["skeleton/lib/tree-house-prince/*.*"]
+map_files.each do |f|
+  stripped = File.basename(f, "*.*")
+  if stripped == "Map.rb"
+    puts "I will not add #{f}"
+  # elsif stripped == "SpiralStaircase.rb"
+  #   puts "I will not add #{f}"
+  else
+    puts stripped
+    require_relative stripped
+  end
+end
+
 
 class Map
 
@@ -14,7 +22,21 @@ class Map
     'front_door' => FrontDoor.new(),
     'ground_floor' => GroundFloor.new(),
     'first_floor' => FirstFloor.new(),
-    'spiral_staircase' => SpiralStaircase.new(),
+    'second_floor' => SecondFloor.new(),
+    'third_floor' => ThirdFloor.new(),
+    'fourth_floor' => FourthFloor.new(),
+    'fifth_floor' => FifthFloor.new(),
+    'machine_room' => MachineRoom.new(),
+    'kitchen' => Kitchen.new(),
+    'library' => Library.new(),
+    'bedroom' => Bedroom.new(),
+    'study' => Study.new(),
+    'spiral_staircase_0' => SpiralStaircase.new(0),
+    'spiral_staircase_1' => SpiralStaircase.new(1),
+    'spiral_staircase_2' => SpiralStaircase.new(2),
+    'spiral_staircase_3' => SpiralStaircase.new(3),
+    'spiral_staircase_4' => SpiralStaircase.new(4),
+    'spiral_staircase_5' => SpiralStaircase.new(5),
     'finished' => Finished.new(),
     'death' => Death.new(),
   }
@@ -34,20 +56,3 @@ class Map
     return next_scene(@start_scene)
   end
 end
-
-# start_scene = 'introduction'
-# scene_name = 'meadow'
-#
-# test_scene_map = Map.new(start_scene)
-# test_scene_map.next_scene(scene_name)
-# test_scene_map.opening_scene()
-#
-# current_scene = test_scene_map.opening_scene()
-# last_scene = test_scene_map.next_scene('finished')
-#
-# # while current_scene != last_scene
-# #   next_scene_name = current_scene.enter()
-# #   current_scene = test_scene_map.next_scene(next_scene_name)
-# # end
-#
-# current_scene.enter()

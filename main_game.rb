@@ -1,6 +1,6 @@
-class Scene
-  def enter()
-    puts "This scene is not yet configured. Subclass it and implement enter()."
-    exit(1)
-  end
-end
+require_relative "skeleton/lib/tree-house-prince/Map.rb"
+
+
+a_map = Map.new('introduction')
+a_game = Engine.new(a_map)
+a_game.play()

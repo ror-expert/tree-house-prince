@@ -15,6 +15,3 @@ class Introduction < Scene
   end
 
 end
-
-test_introduction = Introduction.new()
-test_introduction.enter()

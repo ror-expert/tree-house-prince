@@ -1,7 +1,7 @@
 require_relative "Scene.rb"
 require_relative "SpiralStaircase.rb"
 
-class GroundFloor < Scene
+class ThirdFloor < Scene
 
   def choice(user_selection)
     choosing = true
@@ -9,12 +9,13 @@ class GroundFloor < Scene
       case user_selection
       when /1/, /staircase/, /stairs/, /stair/
         puts "You decide to take the stairs."
-        return 'spiral_staircase_0'
+        return 'spiral_staircase_3'
+
         choosing = false
-      when /2/, /door/, /exit/, /walk/, /out/
-        puts "You walk out the front door and don't stop until you reach the end of the meadow."
+      when /2/, /enter/, /library/, /books/
+        puts "You enter the library."
         choosing = false
-        return 'meadow'
+        return 'library'
       else
         puts "I don't understand what you want.  Try again."
       end
@@ -23,10 +24,10 @@ class GroundFloor < Scene
 
   def enter()
 
-    puts """You are on the ground floor.  You have the following choices:
+    puts """You are on the third floor.  You have the following choices:
 
     1. Take the spiral staircase.
-    2. Walk out the front door.
+    2. Enter the library, where you can meet some talkative books.
 
     """
 
