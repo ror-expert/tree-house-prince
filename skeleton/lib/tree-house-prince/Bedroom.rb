@@ -27,7 +27,7 @@ class Bedroom < Scene
     print "> "
 
     userSelection = $stdin.gets.chomp.downcase()
-    fork_in_the_road(userSelection)
+    bedroom_options(userSelection)
   end
 
 end

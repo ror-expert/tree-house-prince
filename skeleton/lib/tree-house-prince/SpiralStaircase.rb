@@ -32,6 +32,16 @@ class SpiralStaircase
 
   def floor_selector()
 
+    @exit = {
+    'ground' => 'ground_floor',
+    'first' => 'first_floor',
+    'second' => 'second_floor',
+    'third' => 'third_floor',
+    'fourth' => 'fourth_floor',
+    'fifth' => 'fifth_floor',
+    'exit' => 'meadow',
+    }
+
     # @floor_selection = floor_selection
 
     case @floor_selection
@@ -41,7 +51,9 @@ class SpiralStaircase
         return 'ground_floor'
       elsif @current_floor != 0
         puts "You descend the stairs to the ground floor."
-        return 'ground_floor'
+        @current_floor = 0
+        puts "current floor is #{@current_floor}"
+        # return 'ground_floor'
       else
         puts "Something has clearly gone wrong."
       end
@@ -50,15 +62,16 @@ class SpiralStaircase
         puts "You ascend the stairs to the first floor."
         @current_floor = 1
         puts "You are now on floor number #{@current_floor}"
-        return 'first_floor'
+      # return 'first_floor'
+        # @destination = @exit['first']
       elsif @current_floor > 1
         puts "You descend the stairs to the first floor."
         @current_floor = 1
-        destination = 'first_floor'
-        return 'first_floor'
+        # destination = 'first_floor'
+        # return 'first_floor'
       elsif @current_floor == 1
       puts "You are already here.  Try another floor."
-      return 'first_floor'
+      # return 'first_floor'
       else
         puts "There has clearly been a mistake somewhere."
       end
@@ -66,14 +79,14 @@ class SpiralStaircase
         if @current_floor < 2
           puts "You ascend the stairs to the second floor."
           @current_floor = 2
-          return 'second_floor'
+          # return 'second_floor'
         elsif @current_floor > 2
           puts "You descend the stairs to the second floor."
           @current_floor = 2
-          return 'second_floor'
+          # return 'second_floor'
         elsif @current_floor == 2
           puts "You are already here.  Try another floor."
-          return 'second_floor'
+          # return 'second_floor'
         else
           puts "There has clearly been a mistake somewhere."
         end
@@ -120,10 +133,10 @@ class SpiralStaircase
       end
     when /6/, /leave/, /exit/, /back/, /meadow/
       puts  "You descend the stairs, walk out the door, and keep going until the you reach the edge of the meadow."
-      @current_floor = -1
+      @current_floor = 6
       return 'meadow'
     else
-      puts "I don't understand your request"
+      puts "Spiral staircase doesn't understand your request"
     end
   end
 
@@ -141,14 +154,28 @@ class SpiralStaircase
 
       floor_selector()
 
+      case @current_floor
+      # when -1
+      #   return @exit['exit']
+      when 0
+        return @exit['ground']
+      when 1
+        return @exit['first']
+      when 2
+        return @exit['second']
+      when 3
+        return @exit['third']
+      when 4
+        return @exit['fourth']
+      when 5
+        return @exit['fifth']
+      when 6
+        return @exit['exit']
+      else
+        puts "Something has gone wrong"
+      end
+
     end
-
-
-
-    # destination = @destination
-
-    puts "the destination is now #{destination}"
-    return destination
 
   end
 
