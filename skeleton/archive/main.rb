@@ -253,7 +253,7 @@ class RiverBank < Scene
     1. Go to the tree house.
     2. Wade into the river.
 
-    """, 80
+    """
 
     print "> "
 
