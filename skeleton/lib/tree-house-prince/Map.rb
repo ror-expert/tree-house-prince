@@ -37,6 +37,7 @@ class Map
     'spiral_staircase_3' => SpiralStaircase.new(3),
     'spiral_staircase_4' => SpiralStaircase.new(4),
     'spiral_staircase_5' => SpiralStaircase.new(5),
+    'marriage' => Marriage.new(),
     'finished' => Finished.new(),
     'death' => Death.new(),
   }

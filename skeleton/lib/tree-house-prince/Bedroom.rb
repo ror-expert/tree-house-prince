@@ -1,12 +1,13 @@
 require_relative "Scene.rb"
+require_relative "Marriage.rb"
 
 class Bedroom < Scene
 
   def bedroom_options(userSelection)
     case userSelection
     when /1/, /lie/, /down/, /cushion/, /sleep/
-      puts "Something wonderful happens and the game ends here.\n"
-      return 'finished'
+      puts "You lie down on the floor cushion and fall asleep.\n"
+      return 'marriage'
     when /2/, /exit/, /leave/, /bedroom/
       puts "You walk back out to the fourth floor landing."
       return 'fourth_floor'
