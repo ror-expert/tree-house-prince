@@ -2,6 +2,9 @@ require_relative "Scene.rb"
 
 class Introduction < Scene
   def enter()
+
+    clear_screen()
+
     puts """
 
     TTTTT H   H EEEEE     OOOOO DDDD  EEEEE SSSSS SSSSS IIIII  AAA
@@ -11,6 +14,7 @@ class Introduction < Scene
       T   H   H EEEEE     OOOOO DDDD  EEEEE SSSSS SSSSS IIIII A   A
 
     """
+
     return 'meadow'
   end
 

@@ -23,6 +23,8 @@ class FirstFloor < Scene
 
   def enter()
 
+		# clear_screen()
+
     puts """You are on the first floor.  You have the following choices:
 
     1. Take the spiral staircase.

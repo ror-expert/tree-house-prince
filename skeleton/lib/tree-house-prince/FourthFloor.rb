@@ -24,6 +24,8 @@ class FourthFloor < Scene
 
   def enter()
 
+		# clear_screen()
+
     puts """You are on the fourth floor.  You have the following choices:
 
     1. Take the spiral staircase.

@@ -2,26 +2,23 @@ require_relative "Scene.rb"
 
 class River < Scene
 
-  # def river_choice(user_selection.to_s)
-  #
-  #
-  # end
-
   def river_choice(user_selection)
-    @scene_options = {
+    @outcomes = {
       'live' => 'front_door',
       'die' => 'death'
     }
 
     case user_selection.to_s
     when /1/, /tree/, /house/
-      puts "You go to the tree house."
+      @outcome = 'live'
+      # puts "You go to the tree house."
+      # puts "This is the $$$ scene option: #{@outcome}"
       return 'front_door'
-      @scene_option = 'live'
     when /2/, /river/
-      puts "You wade into the river."
-      puts "The strong current pulls you under and you drown."
-      @scene_option = 'die'
+      @outcome = 'die'
+      # puts "You wade into the river."
+      # puts "The strong current pulls you under and you drown."
+      # puts "This is the $$$ scene option: #{@outcome}"
       return 'death'
     else
       puts "That does not compute."
@@ -31,7 +28,9 @@ class River < Scene
 
   def enter()
 
-    puts  """
+		clear_screen()
+
+    puts """
     You go to the river bank.  You feel rather thirsty and decide to have a drink.  As you take a few handfuls of fresh water, you realise that the river current is very strong.  It would be extremely dangerous to wade into the water.
 
     Your thirst quenched, you stand back up and look around.
@@ -51,10 +50,14 @@ class River < Scene
 
     river_choice(user_selection)
 
-    case @scene_option
+    # puts "This is the scene option: #{@outcome}"
+
+    case @outcome
     when 'live'
+      puts "You go to the front door of the tree house."
       return 'front_door'
     when 'die'
+      puts "The strong current of the river pulls you under, and you drown."
       return 'death'
     else
       puts "Something clearly has gone wrong."
@@ -62,3 +65,6 @@ class River < Scene
 
   end
 end
+
+# testing = River.new()
+# testing.enter()

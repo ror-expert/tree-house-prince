@@ -23,6 +23,8 @@ class GroundFloor < Scene
 
   def enter()
 
+		clear_screen()
+
     puts """You are on the ground floor.  You have the following choices:
 
     1. Take the spiral staircase.

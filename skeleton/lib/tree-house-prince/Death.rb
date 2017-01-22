@@ -8,8 +8,10 @@ class Death < Scene
   ]
 
   def enter()
+
+		clear_screen()
     puts @@quips[rand(0..(@@quips.length - 1))]
-    return 'dead'
+    return 'finished'
     exit(1)
   end
 end

@@ -221,7 +221,7 @@ class Meadow < Scene
     1. Go to the tree house
     2. Go to the river
 
-    """, 80
+    
     print "> "
 `
     userSelection = $stdin.gets.chomp.downcase()
@@ -292,7 +292,7 @@ class FrontDoor < Scene
     \"OK,\" you reply, not having much of a choice in the matter.
 
     \"Alright, then, here goes...\"
-    """, 80
+    
 
     def correctAnswer()
       puts "\n\nThat is correct!"

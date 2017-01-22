@@ -3,11 +3,8 @@ map_files = Dir["skeleton/lib/tree-house-prince/*.*"]
 map_files.each do |f|
   stripped = File.basename(f, "*.*")
   if stripped == "Map.rb"
-    puts "I will not add #{f}"
-  # elsif stripped == "SpiralStaircase.rb"
-  #   puts "I will not add #{f}"
   else
-    puts stripped
+    # puts stripped
     require_relative stripped
   end
 end

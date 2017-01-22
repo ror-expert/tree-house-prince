@@ -21,27 +21,50 @@ class Marriage < Scene
     YOU: 'And thou in that case art my king.'
 
     You place your lips on his and seal your marriage with a kiss.
+
     """
+
+  end
+
+  def outcome_ring_translation()
+
+    case @status
+    when "success"
+      marriage_sequence()
+    when "failure"
+      puts "You give up and leave the tree-house castle, never to return."
+    else
+      "Something has gone wrong here."
+    end
+
   end
 
   def ring_translation(attempted_translation)
 
     case attempted_translation
     when /my queen/
-      return 'translated'
-      puts "That is correct!"
-      @ring_translation = true
-      marriage_sequence()
+      puts "That's correct!"
+      @choice = true
+      @status = "success"
+      return @status
+    when /give up/
+      puts "That is a shame, you almost found what you had always looked for."
+      @choice = true
+      @status = "failure"
+      return @status
     else
-      return 'not_translated'
-      puts "Tai nėra tai, ką užrašas reiškia!\n"
-      puts "Try again."
-      print "> "
-    end
+      puts "Sorry, that is incorrect.  Try again."
+      @status = "try_again"
+      return @status
 
+    end
   end
 
   def enter()
+
+		clear_screen()
+
+    @choice = false
 
     puts """When you wake up, you see a handsome prince sleeping on the floor next to you.
     You cuddle up next to him, and when you both wake up the following morning, you have the following exchange:
@@ -64,23 +87,26 @@ class Marriage < Scene
 
     It reads, 'Mano Karalienė'.
 
-    What does the inscription mean?\n\n"""
+    What does the inscription mean?
 
-    print '> '
+    """
 
-    attempted_translation = $stdin.gets.chomp.downcase()
+    while @choice == false
 
-    @ring_translation = false
+      print "> "
 
-    while @ring_translation == false
+      attempted_translation = $stdin.gets.chomp.downcase()
+
       ring_translation(attempted_translation)
+
     end
+
+    outcome_ring_translation()
 
     return 'finished'
 
   end
 end
-
 
 # testing = Marriage.new()
 # testing.enter()

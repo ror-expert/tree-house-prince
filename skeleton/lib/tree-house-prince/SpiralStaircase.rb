@@ -1,6 +1,6 @@
 require_relative "Scene.rb"
 
-class SpiralStaircase
+class SpiralStaircase < Scene
 
   def initialize(current_floor)
     @current_floor = current_floor
@@ -8,6 +8,7 @@ class SpiralStaircase
   end
 
   def selection_text()
+
     puts  """
     You are at a spiral staircase.  There is a sign on the landing:
 
@@ -141,6 +142,44 @@ class SpiralStaircase
 
   def enter()
 
+		clear_screen()
+
+    puts """
+    ________                 _________
+   |        |               |         |
+   |        |               |         |
+   |--------|               |---------|
+   |--------|               |---------|
+_____|______ @|_______________|________@|_____
+||----|---||---|---||---||---|||---||----|----||
+||    |---||---|   ||   ||   |||---||----|    ||
+||____|___||___|___||___||___|||___||____|____||
+                     |_________|
+                     |________|
+                     |_______|
+                     |_____|
+                     |___|
+                  __|||
+                _|___|
+              _|_____|
+             |_______|
+            |________|
+           |_________|
+           |_________|
+           |_________|
+            |________|
+             |_______|
+               |_____|
+                 |___|
+                    |_|__
+                     |___|_
+                     |_____|_
+                     |_______|
+                     |________|
+________________________|_________|____________________
+
+"""
+
     floor_number = @floor_number
 
     while @current_floor == @floor_number
@@ -180,5 +219,5 @@ class SpiralStaircase
 
 end
 
-testing = SpiralStaircase.new(0)
-testing.floor_selector(1.to_s)
+# testing = SpiralStaircase.new(0)
+# testing.floor_selector(1.to_s)

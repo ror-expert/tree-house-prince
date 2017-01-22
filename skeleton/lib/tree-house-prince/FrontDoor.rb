@@ -62,6 +62,8 @@ class FrontDoor < Scene
   end
 
   def enter()
+
+		clear_screen()
     puts "You stand before the front door of the tree house castle."
     ## Create riddle
     puts """
@@ -86,3 +88,5 @@ class FrontDoor < Scene
 
   end
 end
+
+# testing = F

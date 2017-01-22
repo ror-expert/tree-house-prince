@@ -1,5 +1,7 @@
 class Scene
   def enter()
+
+    clear_screen()
     puts "This scene is not yet configured. Subclass it and implement enter()."
     exit(1)
   end
@@ -48,7 +50,7 @@ class Meadow < Scene
     1. Go to the tree house
     2. Go to the river
 
-    """, 80
+
     print "> "
 
     userSelection = $stdin.gets.chomp.downcase()

@@ -1,4 +1,4 @@
-require "tree-house-prince/Finished.rb"
+require "tree-house-prince/FrontDoor.rb"
 require "test/unit"
 
 class TestCase < Test::Unit::TestCase

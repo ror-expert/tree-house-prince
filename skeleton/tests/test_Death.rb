@@ -6,7 +6,7 @@ class TestCase < Test::Unit::TestCase
   def test_death()
 
     death_test = Death.new()
-    assert_equal(death_test.enter(), 'dead')
+    assert_equal(death_test.enter(), 'finished')
 
   end
 

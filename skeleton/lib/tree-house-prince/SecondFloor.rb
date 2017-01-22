@@ -24,12 +24,16 @@ class SecondFloor < Scene
 
   def enter()
 
+		# clear_screen()
+
     puts """You are on the second floor.  You have the following choices:
 
     1. Take the spiral staircase.
     2. Enter the kitchen, where you can get a sandwich.
 
     """
+
+
 
     print "> "
 
